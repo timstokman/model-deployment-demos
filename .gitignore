@@ -1,0 +1,5 @@
+.venv
+*.onnx
+*.tflite
+*.log
+*.gguf

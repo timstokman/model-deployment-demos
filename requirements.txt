@@ -1,0 +1,6 @@
+torch
+tensorflow
+onnx
+onnxruntime
+pycoral
+llama-cpp-python
