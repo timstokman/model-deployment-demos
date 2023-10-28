@@ -41,3 +41,19 @@ edgetpu_compiler my_model.tflite
 `python tflite_edgetpu_inference.py`
 
 # LLAMA
+
+## Step 1 - Install dependencies
+
+```
+python -m venv .venv
+source .venv/
+pip install -r requirements.txt
+```
+
+## Step 2 - Download model
+
+Download llama-2-7b.Q8_0.gguf from https://huggingface.co/TheBloke/Llama-2-7b-Chat-GGUF
+
+## Step 3 - Inference
+
+`python llama.py`
