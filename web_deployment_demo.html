@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+  <header>
+    <title>ONNX Web Deployment</title>
+  </header>
+  <body>
+    <script src="https://cdn.jsdelivr.net/npm/onnxruntime-web/dist/ort.min.js">
+    </script>
+    <script>
+        const run = async () => {
+            // create a new session and load the model.
+            const session = await ort.InferenceSession.create('./my_model.onnx');
+
+            // prepare dummy input data
+            const inputData = Float32Array.from({ length: 200 }, () => Math.random());
+
+            // run the model
+            const results = await session.run({ input: new ort.Tensor('float32', inputData, [200]) });
+
+            // output results
+            const output = results.output.data;
+            document.getElementById('result').textContent = output;
+        }
+    </script>
+    <button onclick="javascript:run()">Click</button>
+    <p id="result"></p>
+  </body>
+</html>
